@@ -60,3 +60,6 @@ class Station(models.Model):
         verbose_name = "Estacion"
         verbose_name_plural = "Estaciones"
         ordering = ["-created"]  # se ordenen por fecha de creacion a la inversa
+
+    def __str__(self):
+        return self.name
