@@ -27,6 +27,9 @@ class Network(models.Model):
         verbose_name_plural = "Redes"
         ordering = ["-created"]  # se ordenen por fecha de creacion a la inversa
 
+    def __str__(self):
+        return self.name
+
 
 class Station(models.Model):
     name = models.CharField(max_length=200, verbose_name="Nombre")

@@ -44,8 +44,8 @@ class Command(BaseCommand):
                     date=station_data["timestamp"],
                 )
 
-        print("Hola si funciono!!!!!")
-
         self.stdout.write(
-            self.style.SUCCESS("Se han cargado los datos correctamente!!!!")
+            self.style.SUCCESS(
+                "Se han cargado los datos de Bikesantiago, correctamente"
+            )
         )

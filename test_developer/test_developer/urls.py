@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path("tarea2/", include("tarea2.urls")),
     path("tarea1/", include("tarea1.urls")),
     path("admin/", admin.site.urls),
 ]
