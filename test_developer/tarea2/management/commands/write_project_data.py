@@ -8,15 +8,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from tarea2.models import Proyecto
 
 
-# from bs4 import BeautifulSoup
-
-
 class Command(BaseCommand):
     def handle(self, *args, **options):
         data = []
         url = "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php"
         # selenium
-
         driver = webdriver.Chrome()
         driver.get(url)
         pagination = driver.find_elements(By.NAME, "pagina_offset")

@@ -42,6 +42,7 @@ class Command(BaseCommand):
                     slots=station_data["extra"]["slots"],
                     uid=station_data["extra"]["uid"],
                     date=station_data["timestamp"],
+                    defaults={"date": station_data["timestamp"]},
                 )
         else:
             return self.stdout.write(

@@ -2,5 +2,5 @@ from django.shortcuts import render, HttpResponse
 
 
 # Create your views here.
-def home(request):
-    return HttpResponse("<h1>Hola Weon!<h1/>")
+def proyecto(request):
+    return render(request, "proyecto.html")

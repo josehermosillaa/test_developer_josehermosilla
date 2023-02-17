@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AeroChile</title>
+    <title>Proyectos Evaluacion Impacto Ambiental</title>
     {% load static  %}
     {% block css%}
     {% endblock %}
@@ -14,23 +14,6 @@
 </head>
 <body>
     <header>
-        
-        <nav>
-                <ul>
-                        <li>
-                            <a href="{% url 'home' %}">Home</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a href="#">Hola: {{ user.username }}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}">Logout</a>
-                        </li>
-                        {% endif %}
-                </ul>   
-        </nav>
-        
     </header>
 
     <div id="principal">
