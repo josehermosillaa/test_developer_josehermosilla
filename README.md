@@ -125,7 +125,7 @@ Se escribieron dos modelos (tarea1/models.py):
 
 
         ``` 
-        class Station(models.Model):
+    class Station(models.Model):
         name = models.CharField(max_length=200, verbose_name="Nombre")
         identification = models.CharField(max_length=200, verbose_name="id")
         latitude = models.DecimalField(
