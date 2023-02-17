@@ -64,6 +64,7 @@ zope.interface==5.5.2
 
 ```
 ## Como ejecutar el proyecto
+Primero debe ingresar a la carpeta del proyecto test_developer
 Se debe primero correr hacer las migraciones para poblar la base de datos
 
    Windows:
