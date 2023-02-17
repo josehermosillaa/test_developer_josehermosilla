@@ -169,7 +169,7 @@ para ejecutarlo debe usar
 
 Se escribio el modelo (tarea2/models.py):
   
-  ```
+    ```
     class Proyecto(models.Model):
         id_proyecto = models.IntegerField(verbose_name="Id del proyecto")
         nombre_proyecto = models.TextField(null=False, verbose_name="Nombre del proyecto")
@@ -188,7 +188,7 @@ Se escribio el modelo (tarea2/models.py):
         )
     ```
 
-    
+
 **Se puede observar que nombre del proyecto quedo como un TextField, esto ya que algunos nombres obtenidos superban los 255 caracteres maximos de un CharField**
 
 Se logran observar los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
