@@ -187,6 +187,8 @@ Se escribio el modelo (tarea2/models.py):
             auto_now_add=True, verbose_name="Fecha de actualización"
         )
     ```
+
+    
 **Se puede observar que nombre del proyecto quedo como un TextField, esto ya que algunos nombres obtenidos superban los 255 caracteres maximos de un CharField**
 
 Se logran observar los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
