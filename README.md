@@ -85,8 +85,7 @@ Linux o Mac:
 ## Consideraciones
 
 
-* se envia la base de datos utilizadas en caso que quieran ejecutarla directamente
-* se deja arriba el json Obtenido del script de la tarea 2 con el nombre informacion_proyectos
+* se deja arriba el json Obtenido del script de la tarea 2 (test_developer/informacion_proyectos)
 * se crearon dos aplicaciones (tarea1 y tarea2), las cuales hacen referencias a     cada una de los puntos solicitados en el test
 * Se escribio un management command en Django para cada script solicitado, se explica el uso mas adelante
 ### Tarea 1
@@ -153,9 +152,42 @@ Se escribieron dos modelos (tarea1/models.py):
             auto_now_add=True, verbose_name="Fecha de actualización"
         )
     ```
-se pueden ver los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
+Se logran observar los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
 ademas se logro representar los datos en una tabla que se encuentra directamente en localhost:8000/
 * si pulsa sobre el nombre de la estacion, podra obtener mas detalles de ella
 * se agregaron colores para representar estaciones que tienen 0 Bicicletas y otros para cuando hay disponibles
 
 ### Tarea 2
+En la segunda tarea se pidio obtener datos de la pagina https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php, esto se logro gracias a la libreria de selenium, donde se logro hacer la llamada a la url y simular un cambio de pagina, recorriendo desde la primera hasta la última, para cada cambio de paginas se extraina los datos de las tablas con la misma libreria.
+
+Se escriben todos los datos como diccionarios que se almacenaran en la lista data y esta se escribira en un archivo Json , ademas de ir escribiendola en la base de datos con la ayuda de update_or_create del ORM de Django
+
+* El script se encuentra en la app tarea2/management/commands/
+* su nombre es write_project_data.py
+para ejecutarlo debe usar
+```python3 manage.py write_project_data ```
+
+Se escribieronel modelo (tarea2/models.py):
+  
+  ```
+  class Proyecto(models.Model):
+    id_proyecto = models.IntegerField(verbose_name="Id del proyecto")
+    nombre_proyecto = models.TextField(null=False, verbose_name="Nombre del proyecto")
+    tipo_proyecto = models.CharField(max_length=200, verbose_name="Tipo")
+    region = models.CharField(max_length=200, verbose_name="Región")
+    tipologia = models.CharField(max_length=200, verbose_name="Tipología")
+    titular = models.CharField(max_length=200, verbose_name="Titular")
+    inversion = models.DecimalField(
+        max_digits=9, decimal_places=4, verbose_name="Inversión(MMU$)"
+    )
+    fecha_ingreso = models.DateField(verbose_name="Fecha de Ingreso")
+    estado = models.CharField(max_length=200, verbose_name="Estado del proyecto")
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
+    updated = models.DateTimeField(
+        auto_now_add=True, verbose_name="Fecha de actualización"
+    )
+    ```
+ **Se puede observar que nombre del proyecto quedo como un TextField, esto ya que algunos nombres obtenidos superban los 255 caracteres maximos de un CharField**
+
+Se logran observar los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
+* ademas se logro representar los datos en una tabla que se encuentra directamente en localhost:8000/tarea2/
