@@ -167,25 +167,25 @@ Se escriben todos los datos como diccionarios que se almacenaran en la lista dat
 para ejecutarlo debe usar
 ```python3 manage.py write_project_data ```
 
-Se escribieronel modelo (tarea2/models.py):
+Se escribio el modelo (tarea2/models.py):
   
   ```
-  class Proyecto(models.Model):
-    id_proyecto = models.IntegerField(verbose_name="Id del proyecto")
-    nombre_proyecto = models.TextField(null=False, verbose_name="Nombre del proyecto")
-    tipo_proyecto = models.CharField(max_length=200, verbose_name="Tipo")
-    region = models.CharField(max_length=200, verbose_name="Región")
-    tipologia = models.CharField(max_length=200, verbose_name="Tipología")
-    titular = models.CharField(max_length=200, verbose_name="Titular")
-    inversion = models.DecimalField(
-        max_digits=9, decimal_places=4, verbose_name="Inversión(MMU$)"
-    )
-    fecha_ingreso = models.DateField(verbose_name="Fecha de Ingreso")
-    estado = models.CharField(max_length=200, verbose_name="Estado del proyecto")
-    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
-    updated = models.DateTimeField(
-        auto_now_add=True, verbose_name="Fecha de actualización"
-    )
+    class Proyecto(models.Model):
+        id_proyecto = models.IntegerField(verbose_name="Id del proyecto")
+        nombre_proyecto = models.TextField(null=False, verbose_name="Nombre del proyecto")
+        tipo_proyecto = models.CharField(max_length=200, verbose_name="Tipo")
+        region = models.CharField(max_length=200, verbose_name="Región")
+        tipologia = models.CharField(max_length=200, verbose_name="Tipología")
+        titular = models.CharField(max_length=200, verbose_name="Titular")
+        inversion = models.DecimalField(
+            max_digits=9, decimal_places=4, verbose_name="Inversión(MMU$)"
+        )
+        fecha_ingreso = models.DateField(verbose_name="Fecha de Ingreso")
+        estado = models.CharField(max_length=200, verbose_name="Estado del proyecto")
+        created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
+        updated = models.DateTimeField(
+            auto_now_add=True, verbose_name="Fecha de actualización"
+        )
     ```
  **Se puede observar que nombre del proyecto quedo como un TextField, esto ya que algunos nombres obtenidos superban los 255 caracteres maximos de un CharField**
 
