@@ -43,7 +43,10 @@ class Command(BaseCommand):
                     uid=station_data["extra"]["uid"],
                     date=station_data["timestamp"],
                 )
-
+        else:
+            return self.stdout.write(
+                self.style.WARNING("No se ha logrado cargar la data")
+            )
         self.stdout.write(
             self.style.SUCCESS(
                 "Se han cargado los datos de Bikesantiago, correctamente"
