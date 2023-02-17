@@ -40,8 +40,6 @@ class Command(BaseCommand):
                     return str1
 
                 decimal = change(columns[6].text)
-                print(decimal)
-                print(columns[0].text)
                 dato = {
                     "id_proyecto": int(columns[0].text),
                     "nombre_proyecto": columns[1].text,
