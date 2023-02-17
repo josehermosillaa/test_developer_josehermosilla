@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="{% static 'js/script.js' %}"></script>
+    <title>Proyectos Sistema de Evaluacion Ambiental</title>
+    
+</head>
+<body>
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Región</th>
+                <th scope="col">Tipología	</th>
+                <th scope="col">Titular</th>
+                <th scope="col">Inversión(MMU$)</th>
+                <th scope="col">Fecha Presentación Fecha de Ingreso</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in proyectos  %}
+            <tr>
+                <td>{{data.id_proyecto}}</td>
+                <td>{{data.nombre_proyecto}}</td>
+                <td>{{data.tipo_proyecto}}</td>
+                <td>{{data.region}}</td>
+                <td>{{data.tipologia}}</td>
+                <td>{{data.titular}}</td>
+                <td>{{data.inversion}}</td>
+                <td>{{data.fecha_ingreso}}</td>
+                <td>{{data.estado}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Región</th>
+                <th scope="col">Tipología	</th>
+                <th scope="col">Titular</th>
+                <th scope="col">Inversión(MMU$)</th>
+                <th scope="col">Fecha Presentación Fecha de Ingreso</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
