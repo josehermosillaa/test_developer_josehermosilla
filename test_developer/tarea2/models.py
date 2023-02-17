@@ -4,9 +4,7 @@ from django.db import models
 # Create your models here.
 class Proyecto(models.Model):
     id_proyecto = models.IntegerField(verbose_name="Id del proyecto")
-    nombre_proyecto = models.CharField(
-        max_length=200, verbose_name="Nombre del proyecto"
-    )
+    nombre_proyecto = models.TextField(null=False, verbose_name="Nombre del proyecto")
     tipo_proyecto = models.CharField(max_length=200, verbose_name="Tipo")
     region = models.CharField(max_length=200, verbose_name="Región")
     tipologia = models.CharField(max_length=200, verbose_name="Tipología")
@@ -24,7 +22,7 @@ class Proyecto(models.Model):
     class Meta:
         verbose_name = "Proyecto"
         verbose_name_plural = "Proyectos"
-        ordering = ["-fecha_ingreso"]  # se ordenen por fecha de creacion a la inversa
+        ordering = ["id_proyecto"]  # se ordenen por fecha de creacion a la inversa
 
     def __str__(self):
         return self.nombre_proyecto

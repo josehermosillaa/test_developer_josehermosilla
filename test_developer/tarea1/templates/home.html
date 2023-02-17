@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+       <div class="contenedor_formulario">
+            <h2 align="center">Estaciones BikeSantiago</h2>
+            <h6 align="center">
+              <table class="table m-3 ">
+                <thead>
+                  <tr>
+                    <th class="btn-success" scope="col">Disponibles</th>
+                    <th class="btn-warning" scope="col">Pocas disponibles</th>
+                    <th class="btn-danger" scope="col">Sin Bicicletas</th>
+                  </tr>
+                </thead>
+              </table>
+            </h6>
+            <center>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Direccion</th>
+                        <th class="text-center" scope="col">Bicicletas Disponibles</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for a in stations %}
+                      <tr class="">
+                        <th  scope="row"><a href="description/{{a.id}}/" style="text-decoration:none;color:black">{{a.name}}</a></th>
+                        <td>{{a.address}}</td>
+                        {% if not a.free_bikes %}
+                          <td class="btn-danger  text-center">{{a.free_bikes}}</td>
+                        {% elif a.free_bikes < 3 %}
+                          <td class="btn-warning text-center">{{a.free_bikes}}</td>
+                        {% else %}
+                          <td class=" btn-success text-center ">{{a.free_bikes}}</td>
+                        {% endif %}
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+            </center>
+        </div>
+        <br> 
+{% endblock %}

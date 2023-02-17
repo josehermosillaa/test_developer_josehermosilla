@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+       <div class="contenedor_formulario">
+            <h1 align="center">Estacion {{station.name}}</h1>
+            <p>
+              <h3><ul>Dirección: {{station.address}}</ul></h3>
+              <h3><ul>Cantidad de Bicicletas: {{station.slots}}</ul></h3>
+              <h3><ul>Disponibles: {{station.free_bikes}}</ul></h3>
+              <h3><ul>Medios de Pago: {% for a in medios %}{{a}}{% endfor %}
+              </ul></h3>
+            </p>
+        </div>
+        <br> 
+{% endblock %}
