@@ -99,7 +99,8 @@ para ejecutarlo debe usar
 Se escribieron dos modelos (tarea1/models.py):
 * Uno donde se guardo la data de la compañia llamado Networks
   
-  ```class Network(models.Model):
+  ```
+  class Network(models.Model):
     name = models.CharField(max_length=200, verbose_name="Nombre")
     company = models.TextField(null=True, verbose_name="Compañia")
     identification = models.CharField(max_length=200, verbose_name="id")
@@ -116,13 +117,15 @@ Se escribieron dos modelos (tarea1/models.py):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de actualización"
-    )```
+    )
+    ```
 
 
 * class Station, que tiene los datos de las estaciones de estas bicicletas
 
 
-        ``` class Station(models.Model):
+        ``` 
+        class Station(models.Model):
         name = models.CharField(max_length=200, verbose_name="Nombre")
         identification = models.CharField(max_length=200, verbose_name="id")
         latitude = models.DecimalField(
@@ -148,7 +151,8 @@ Se escribieron dos modelos (tarea1/models.py):
         created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
         updated = models.DateTimeField(
             auto_now_add=True, verbose_name="Fecha de actualización"
-        )```
+        )
+        ```
 se pueden ver los datos cargados en localhost:8000/admin/ y realizar busqueda por nombre
 ademas se logro representar los datos en una tabla que se encuentra directamente en localhost:8000/
 * si pulsa sobre el nombre de la estacion, podra obtener mas detalles de ella
