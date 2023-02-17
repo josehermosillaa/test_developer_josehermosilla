@@ -158,7 +158,7 @@ ademas se logro representar los datos en una tabla que se encuentra directamente
 * se agregaron colores para representar estaciones que tienen 0 Bicicletas y otros para cuando hay disponibles
 
 ### Tarea 2
-En la segunda tarea se pidio obtener datos de la pagina https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php, esto se logro gracias a la libreria de selenium, donde se logro hacer la llamada a la url y simular un cambio de pagina, recorriendo desde la primera hasta la última, para cada cambio de paginas se extraina los datos de las tablas con la misma libreria.
+En la segunda tarea se pidio obtener datos de la pagina https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php, esto se logro gracias a la libreria de selenium, donde se realizó el llamado a la url y se logro simular un cambio de pagina, recorriendo desde la primera hasta la última, para cada cambio de paginas se extrajo los datos de las tablas con la misma libreria.
 
 Se escriben todos los datos como diccionarios que se almacenaran en la lista data y esta se escribira en un archivo Json , ademas de ir escribiendola en la base de datos con la ayuda de update_or_create del ORM de Django
 
